@@ -18,6 +18,8 @@ showSevenNineRangeMaster = input.bool(true, " 7-9am Range", group=groupMaster, d
 showPrevDayHLMaster = input.bool(true, " Previous Day High/Low", group=groupMaster, display=display.none)
 showADRMaster = input.bool(true, " Average Daily Range", group=groupMaster, display=display.none)
 showUnfilledLiquidity = input.bool(true, " Unfilled Liquidity Voids", group=groupMaster, display=display.none)
+allDrawingsTransparency = input.int(0, " All Drawings Transparency", minval=0, maxval=100, group=groupMaster, display=display.none)
+allTextTransparency = input.int(0, " All Text Transparency", minval=0, maxval=100, group=groupMaster, display=display.none)
 
 // ============================== Color Themes
 // --- Light Theme Colors ---
@@ -95,52 +97,61 @@ color D_tableText = color.white
 color D_tableBorder = color.new(#60a5fa, 42)
 
 // --- Assign Colors Based on Theme ---
-var color boxColorRTH = colorTheme == "Dark" ? D_gapBox : L_gapBox
-var color boxColorNDOG = boxColorRTH
-var color prevDayCloseLineColor = colorTheme == "Dark" ? D_prevDayCloseLine : L_prevDayCloseLine
-var color prevDayCloseLabelBgColor = colorTheme == "Dark" ? D_prevDayCloseLabelBg : L_prevDayCloseLabelBg
-var color prevDayCloseLabelTextColor = colorTheme == "Dark" ? D_prevDayCloseLabelText : L_prevDayCloseLabelText
-var color gapMidlineColor = colorTheme == "Dark" ? D_gapMidline : L_gapMidline
-var color gapPriceLabelBgColor = colorTheme == "Dark" ? D_gapPriceLabelBg : L_gapPriceLabelBg
-var color gapPriceLabelTextColor = colorTheme == "Dark" ? D_gapPriceLabelText : L_gapPriceLabelText
-var color neutralLabelBgColor = colorTheme == "Dark" ? color.new(#111827, 30) : color.new(#f8fafc, 12)
-var color neutralLabelBgColorStrong = colorTheme == "Dark" ? color.new(#0b1220, 20) : color.new(#ffffff, 0)
-var color gapExtLineColor = colorTheme == "Dark" ? D_gapExtLine : L_gapExtLine
-var color nwogLabelBgColor = colorTheme == "Dark" ? D_nwogLabelBg : L_nwogLabelBg
-var color nwogLabelTextColor = colorTheme == "Dark" ? D_nwogLabelText : L_nwogLabelText
-var color asiaBoxColor = colorTheme == "Dark" ? D_asiaBox : L_asiaBox
-var color asiaLineColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color asiaLabelBgColor = colorTheme == "Dark" ? D_asiaLabelBg : L_asiaLabelBg
-var color asiaLabelTextColor = colorTheme == "Dark" ? D_asiaLabelText : L_asiaLabelText
-var color asiaPriceLabelTextColor = colorTheme == "Dark" ? D_asiaPriceLabelText : L_asiaPriceLabelText
-var color asiaUnsweptLabelTextColor = colorTheme == "Dark" ? D_asiaUnsweptLabelText : L_asiaUnsweptLabelText
-var color vertLineColor = colorTheme == "Dark" ? D_vertLine : L_vertLine
-var color startDayLineColor = colorTheme == "Dark" ? D_startDayLine : L_startDayLine
-var color sevenNineBoxColor = colorTheme == "Dark" ? D_sevenNineBox : L_sevenNineBox
-var color sevenNineLineColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color sevenNineLabelBgColor = colorTheme == "Dark" ? D_sevenNineLabelBg : L_sevenNineLabelBg
-var color sevenNineLabelTextColor = colorTheme == "Dark" ? D_sevenNineLabelText : L_sevenNineLabelText
-var color sevenNinePriceLabelTextColor = colorTheme == "Dark" ? D_sevenNinePriceLabelText : L_sevenNinePriceLabelText
-var color sevenNineUnsweptLabelTextColor = colorTheme == "Dark" ? D_sevenNineUnsweptLabelText : L_sevenNineUnsweptLabelText
-var color bslColor = colorTheme == "Dark" ? D_pdh : L_pdh
-var color sslColor = colorTheme == "Dark" ? D_pdl : L_pdl
-var color asiaMidlineColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color sevenNineBslColor = colorTheme == "Dark" ? D_pdh : L_pdh
-var color sevenNineSslColor = colorTheme == "Dark" ? D_pdl : L_pdl
-var color sevenNineMidlineColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color prevDayHighColor = colorTheme == "Dark" ? D_pdh : L_pdh
-var color prevDayLowColor = colorTheme == "Dark" ? D_pdl : L_pdl
-var color prevDayTextColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color pdhlLabelBgColor = colorTheme == "Dark" ? D_pdhlLabelBg : L_pdhlLabelBg
-var color adrTableBgColor = colorTheme == "Dark" ? D_tableBg : L_tableBg
-var color adrTableTextColor = colorTheme == "Dark" ? D_tableText : L_tableText
-var color adrTableBorderColor = colorTheme == "Dark" ? D_tableBorder : L_tableBorder
-var color adrLineColorUp = colorTheme == "Dark" ? D_adrUp : L_adrUp
-var color adrLineColorDn = colorTheme == "Dark" ? D_adrDn : L_adrDn
-var color adrLabelTextColor = colorTheme == "Dark" ? D_adrLabelText : L_adrLabelText
-var color adrCompletionHighColor = colorTheme == "Dark" ? D_adrCompletionHigh : L_adrCompletionHigh
-var color adrCompletionMidColor = colorTheme == "Dark" ? D_adrCompletionMid : L_adrCompletionMid
-var color adrCompletionLowColor = colorTheme == "Dark" ? D_adrCompletionLow : L_adrCompletionLow
+applyExtraTransparency(baseColor, extraTransparency) =>
+	color.new(baseColor, math.min(100, color.t(baseColor) + extraTransparency))
+
+applyDrawingTransparency(baseColor) =>
+	applyExtraTransparency(baseColor, allDrawingsTransparency)
+
+applyTextTransparency(baseColor) =>
+	applyExtraTransparency(baseColor, allTextTransparency)
+
+color boxColorRTH = applyDrawingTransparency(colorTheme == "Dark" ? D_gapBox : L_gapBox)
+color boxColorNDOG = boxColorRTH
+color prevDayCloseLineColor = applyDrawingTransparency(colorTheme == "Dark" ? D_prevDayCloseLine : L_prevDayCloseLine)
+color prevDayCloseLabelBgColor = applyDrawingTransparency(colorTheme == "Dark" ? D_prevDayCloseLabelBg : L_prevDayCloseLabelBg)
+color prevDayCloseLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_prevDayCloseLabelText : L_prevDayCloseLabelText)
+color gapMidlineColor = applyDrawingTransparency(colorTheme == "Dark" ? D_gapMidline : L_gapMidline)
+color gapPriceLabelBgColor = applyDrawingTransparency(colorTheme == "Dark" ? D_gapPriceLabelBg : L_gapPriceLabelBg)
+color gapPriceLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_gapPriceLabelText : L_gapPriceLabelText)
+color neutralLabelBgColor = applyDrawingTransparency(colorTheme == "Dark" ? color.new(#111827, 30) : color.new(#f8fafc, 12))
+color neutralLabelBgColorStrong = applyDrawingTransparency(colorTheme == "Dark" ? color.new(#0b1220, 20) : color.new(#ffffff, 0))
+color gapExtLineColor = applyDrawingTransparency(colorTheme == "Dark" ? D_gapExtLine : L_gapExtLine)
+color nwogLabelBgColor = applyDrawingTransparency(colorTheme == "Dark" ? D_nwogLabelBg : L_nwogLabelBg)
+color nwogLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_nwogLabelText : L_nwogLabelText)
+color asiaBoxColor = applyDrawingTransparency(colorTheme == "Dark" ? D_asiaBox : L_asiaBox)
+color asiaLineColor = applyDrawingTransparency(colorTheme == "Dark" ? D_textColor : L_textColor)
+color asiaLabelBgColor = applyDrawingTransparency(colorTheme == "Dark" ? D_asiaLabelBg : L_asiaLabelBg)
+color asiaLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_asiaLabelText : L_asiaLabelText)
+color asiaPriceLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_asiaPriceLabelText : L_asiaPriceLabelText)
+color asiaUnsweptLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_asiaUnsweptLabelText : L_asiaUnsweptLabelText)
+color vertLineColor = applyDrawingTransparency(colorTheme == "Dark" ? D_vertLine : L_vertLine)
+color startDayLineColor = applyDrawingTransparency(colorTheme == "Dark" ? D_startDayLine : L_startDayLine)
+color sevenNineBoxColor = applyDrawingTransparency(colorTheme == "Dark" ? D_sevenNineBox : L_sevenNineBox)
+color sevenNineLineColor = applyDrawingTransparency(colorTheme == "Dark" ? D_textColor : L_textColor)
+color sevenNineLabelBgColor = applyDrawingTransparency(colorTheme == "Dark" ? D_sevenNineLabelBg : L_sevenNineLabelBg)
+color sevenNineLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_sevenNineLabelText : L_sevenNineLabelText)
+color sevenNinePriceLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_sevenNinePriceLabelText : L_sevenNinePriceLabelText)
+color sevenNineUnsweptLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_sevenNineUnsweptLabelText : L_sevenNineUnsweptLabelText)
+color bslColor = applyDrawingTransparency(colorTheme == "Dark" ? D_pdh : L_pdh)
+color sslColor = applyDrawingTransparency(colorTheme == "Dark" ? D_pdl : L_pdl)
+color asiaMidlineColor = applyDrawingTransparency(colorTheme == "Dark" ? D_textColor : L_textColor)
+color sevenNineBslColor = applyDrawingTransparency(colorTheme == "Dark" ? D_pdh : L_pdh)
+color sevenNineSslColor = applyDrawingTransparency(colorTheme == "Dark" ? D_pdl : L_pdl)
+color sevenNineMidlineColor = applyDrawingTransparency(colorTheme == "Dark" ? D_textColor : L_textColor)
+color prevDayHighColor = applyDrawingTransparency(colorTheme == "Dark" ? D_pdh : L_pdh)
+color prevDayLowColor = applyDrawingTransparency(colorTheme == "Dark" ? D_pdl : L_pdl)
+color prevDayTextColor = applyTextTransparency(colorTheme == "Dark" ? D_textColor : L_textColor)
+color pdhlLabelBgColor = applyDrawingTransparency(colorTheme == "Dark" ? D_pdhlLabelBg : L_pdhlLabelBg)
+color adrTableBgColor = applyDrawingTransparency(colorTheme == "Dark" ? D_tableBg : L_tableBg)
+color adrTableTextColor = applyTextTransparency(colorTheme == "Dark" ? D_tableText : L_tableText)
+color adrTableBorderColor = applyDrawingTransparency(colorTheme == "Dark" ? D_tableBorder : L_tableBorder)
+color adrLineColorUp = applyDrawingTransparency(colorTheme == "Dark" ? D_adrUp : L_adrUp)
+color adrLineColorDn = applyDrawingTransparency(colorTheme == "Dark" ? D_adrDn : L_adrDn)
+color adrLabelTextColor = applyTextTransparency(colorTheme == "Dark" ? D_adrLabelText : L_adrLabelText)
+color adrCompletionHighColor = applyDrawingTransparency(colorTheme == "Dark" ? D_adrCompletionHigh : L_adrCompletionHigh)
+color adrCompletionMidColor = applyDrawingTransparency(colorTheme == "Dark" ? D_adrCompletionMid : L_adrCompletionMid)
+color adrCompletionLowColor = applyDrawingTransparency(colorTheme == "Dark" ? D_adrCompletionLow : L_adrCompletionLow)
 
 // =============================== Global Settings
 groupGlobal = "- - - - - - - - - - - - - - Global Settings - - - - - - - - - - - - - - "

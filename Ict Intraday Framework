@@ -95,56 +95,117 @@ color D_tableText = color.white
 color D_tableBorder = color.new(#5d606b, 50)
 
 // --- Assign Colors Based on Theme ---
-var color boxColorRTH = colorTheme == "Dark" ? D_gapBox : L_gapBox
-var color boxColorNDOG = boxColorRTH
-var color prevDayCloseLineColor = colorTheme == "Dark" ? D_prevDayCloseLine : L_prevDayCloseLine
-var color prevDayCloseLabelBgColor = colorTheme == "Dark" ? D_prevDayCloseLabelBg : L_prevDayCloseLabelBg
-var color prevDayCloseLabelTextColor = colorTheme == "Dark" ? D_prevDayCloseLabelText : L_prevDayCloseLabelText
-var color gapMidlineColor = colorTheme == "Dark" ? D_gapMidline : L_gapMidline
-var color gapPriceLabelBgColor = colorTheme == "Dark" ? D_gapPriceLabelBg : L_gapPriceLabelBg
-var color gapPriceLabelTextColor = colorTheme == "Dark" ? D_gapPriceLabelText : L_gapPriceLabelText
-var color gapExtLineColor = colorTheme == "Dark" ? D_gapExtLine : L_gapExtLine
-var color nwogLabelBgColor = colorTheme == "Dark" ? D_nwogLabelBg : L_nwogLabelBg
-var color nwogLabelTextColor = colorTheme == "Dark" ? D_nwogLabelText : L_nwogLabelText
-var color asiaBoxColor = colorTheme == "Dark" ? D_asiaBox : L_asiaBox
-var color asiaLineColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color asiaLabelBgColor = colorTheme == "Dark" ? D_asiaLabelBg : L_asiaLabelBg
-var color asiaLabelTextColor = colorTheme == "Dark" ? D_asiaLabelText : L_asiaLabelText
-var color asiaPriceLabelTextColor = colorTheme == "Dark" ? D_asiaPriceLabelText : L_asiaPriceLabelText
-var color asiaUnsweptLabelTextColor = colorTheme == "Dark" ? D_asiaUnsweptLabelText : L_asiaUnsweptLabelText
-var color vertLineColor = colorTheme == "Dark" ? D_vertLine : L_vertLine
-var color startDayLineColor = colorTheme == "Dark" ? D_startDayLine : L_startDayLine
-var color sevenNineBoxColor = colorTheme == "Dark" ? D_sevenNineBox : L_sevenNineBox
-var color sevenNineLineColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color sevenNineLabelBgColor = colorTheme == "Dark" ? D_sevenNineLabelBg : L_sevenNineLabelBg
-var color sevenNineLabelTextColor = colorTheme == "Dark" ? D_sevenNineLabelText : L_sevenNineLabelText
-var color sevenNinePriceLabelTextColor = colorTheme == "Dark" ? D_sevenNinePriceLabelText : L_sevenNinePriceLabelText
-var color sevenNineUnsweptLabelTextColor = colorTheme == "Dark" ? D_sevenNineUnsweptLabelText : L_sevenNineUnsweptLabelText
-var color bslColor = colorTheme == "Dark" ? D_pdh : L_pdh
-var color sslColor = colorTheme == "Dark" ? D_pdl : L_pdl
-var color asiaMidlineColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color sevenNineBslColor = colorTheme == "Dark" ? D_pdh : L_pdh
-var color sevenNineSslColor = colorTheme == "Dark" ? D_pdl : L_pdl
-var color sevenNineMidlineColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color prevDayHighColor = colorTheme == "Dark" ? D_pdh : L_pdh
-var color prevDayLowColor = colorTheme == "Dark" ? D_pdl : L_pdl
-var color prevDayTextColor = colorTheme == "Dark" ? D_textColor : L_textColor
-var color pdhlLabelBgColor = colorTheme == "Dark" ? D_pdhlLabelBg : L_pdhlLabelBg
-var color adrTableBgColor = colorTheme == "Dark" ? D_tableBg : L_tableBg
-var color adrTableTextColor = colorTheme == "Dark" ? D_tableText : L_tableText
-var color adrTableBorderColor = colorTheme == "Dark" ? D_tableBorder : L_tableBorder
-var color adrLineColorUp = colorTheme == "Dark" ? D_adrUp : L_adrUp
-var color adrLineColorDn = colorTheme == "Dark" ? D_adrDn : L_adrDn
-var color adrLabelTextColor = colorTheme == "Dark" ? D_adrLabelText : L_adrLabelText
-var color adrCompletionHighColor = colorTheme == "Dark" ? D_adrCompletionHigh : L_adrCompletionHigh
-var color adrCompletionMidColor = colorTheme == "Dark" ? D_adrCompletionMid : L_adrCompletionMid
-var color adrCompletionLowColor = colorTheme == "Dark" ? D_adrCompletionLow : L_adrCompletionLow
+color boxColorRTH = colorTheme == "Dark" ? D_gapBox : L_gapBox
+color boxColorNDOG = boxColorRTH
+color prevDayCloseLineColor = colorTheme == "Dark" ? D_prevDayCloseLine : L_prevDayCloseLine
+color prevDayCloseLabelBgColor = colorTheme == "Dark" ? D_prevDayCloseLabelBg : L_prevDayCloseLabelBg
+color prevDayCloseLabelTextColor = colorTheme == "Dark" ? D_prevDayCloseLabelText : L_prevDayCloseLabelText
+color gapMidlineColor = colorTheme == "Dark" ? D_gapMidline : L_gapMidline
+color gapPriceLabelBgColor = colorTheme == "Dark" ? D_gapPriceLabelBg : L_gapPriceLabelBg
+color gapPriceLabelTextColor = colorTheme == "Dark" ? D_gapPriceLabelText : L_gapPriceLabelText
+color gapExtLineColor = colorTheme == "Dark" ? D_gapExtLine : L_gapExtLine
+color nwogLabelBgColor = colorTheme == "Dark" ? D_nwogLabelBg : L_nwogLabelBg
+color nwogLabelTextColor = colorTheme == "Dark" ? D_nwogLabelText : L_nwogLabelText
+color asiaBoxColor = colorTheme == "Dark" ? D_asiaBox : L_asiaBox
+color asiaLineColor = colorTheme == "Dark" ? D_textColor : L_textColor
+color asiaLabelBgColor = colorTheme == "Dark" ? D_asiaLabelBg : L_asiaLabelBg
+color asiaLabelTextColor = colorTheme == "Dark" ? D_asiaLabelText : L_asiaLabelText
+color asiaPriceLabelTextColor = colorTheme == "Dark" ? D_asiaPriceLabelText : L_asiaPriceLabelText
+color asiaUnsweptLabelTextColor = colorTheme == "Dark" ? D_asiaUnsweptLabelText : L_asiaUnsweptLabelText
+color vertLineColor = colorTheme == "Dark" ? D_vertLine : L_vertLine
+color startDayLineColor = colorTheme == "Dark" ? D_startDayLine : L_startDayLine
+color sevenNineBoxColor = colorTheme == "Dark" ? D_sevenNineBox : L_sevenNineBox
+color sevenNineLineColor = colorTheme == "Dark" ? D_textColor : L_textColor
+color sevenNineLabelBgColor = colorTheme == "Dark" ? D_sevenNineLabelBg : L_sevenNineLabelBg
+color sevenNineLabelTextColor = colorTheme == "Dark" ? D_sevenNineLabelText : L_sevenNineLabelText
+color sevenNinePriceLabelTextColor = colorTheme == "Dark" ? D_sevenNinePriceLabelText : L_sevenNinePriceLabelText
+color sevenNineUnsweptLabelTextColor = colorTheme == "Dark" ? D_sevenNineUnsweptLabelText : L_sevenNineUnsweptLabelText
+color bslColor = colorTheme == "Dark" ? D_pdh : L_pdh
+color sslColor = colorTheme == "Dark" ? D_pdl : L_pdl
+color asiaMidlineColor = colorTheme == "Dark" ? D_textColor : L_textColor
+color sevenNineBslColor = colorTheme == "Dark" ? D_pdh : L_pdh
+color sevenNineSslColor = colorTheme == "Dark" ? D_pdl : L_pdl
+color sevenNineMidlineColor = colorTheme == "Dark" ? D_textColor : L_textColor
+color prevDayHighColor = colorTheme == "Dark" ? D_pdh : L_pdh
+color prevDayLowColor = colorTheme == "Dark" ? D_pdl : L_pdl
+color prevDayTextColor = colorTheme == "Dark" ? D_textColor : L_textColor
+color pdhlLabelBgColor = colorTheme == "Dark" ? D_pdhlLabelBg : L_pdhlLabelBg
+color adrTableBgColor = colorTheme == "Dark" ? D_tableBg : L_tableBg
+color adrTableTextColor = colorTheme == "Dark" ? D_tableText : L_tableText
+color adrTableBorderColor = colorTheme == "Dark" ? D_tableBorder : L_tableBorder
+color adrLineColorUp = colorTheme == "Dark" ? D_adrUp : L_adrUp
+color adrLineColorDn = colorTheme == "Dark" ? D_adrDn : L_adrDn
+color adrLabelTextColor = colorTheme == "Dark" ? D_adrLabelText : L_adrLabelText
+color adrCompletionHighColor = colorTheme == "Dark" ? D_adrCompletionHigh : L_adrCompletionHigh
+color adrCompletionMidColor = colorTheme == "Dark" ? D_adrCompletionMid : L_adrCompletionMid
+color adrCompletionLowColor = colorTheme == "Dark" ? D_adrCompletionLow : L_adrCompletionLow
 
 // =============================== Global Settings
 groupGlobal = "- - - - - - - - - - - - - - Global Settings - - - - - - - - - - - - - - "
 globalLookbackPeriod = input.int(7, title="Days Lookback (All Components)", minval=1, group=groupGlobal, display=display.none, tooltip="Number of days to display historical data")
 startTimeOption = input.string("3pm", "Start Of Day Time", options=["2pm", "3pm"], group=groupGlobal, display=display.none)
 startTimeHour = startTimeOption == "3pm" ? 15 : 14
+
+
+// =============================== Visual Design Settings
+groupVisual = "- - - - - - - - - - - - - - Visual Design - - - - - - - - - - - - - - "
+visualProfile = input.string("Subtle", "Visual Profile", options=["Balanced", "Subtle", "Custom"], group=groupVisual, display=display.none, tooltip="Subtle keeps the same palette while making drawings less noticeable.")
+customTransparencyBoost = input.int(10, "Custom Extra Transparency", minval=0, maxval=30, group=groupVisual, display=display.none)
+customLineScale = input.float(0.9, "Custom Line Thickness Scale", minval=0.5, maxval=1.5, step=0.1, group=groupVisual, display=display.none)
+customLabelSize = input.string("auto", "Custom Label Size", options=["auto", "tiny", "small", "normal"], group=groupVisual, display=display.none)
+
+visualTransparencyBoost = visualProfile == "Subtle" ? 14 : visualProfile == "Custom" ? customTransparencyBoost : 0
+visualLineScale = visualProfile == "Subtle" ? 0.8 : visualProfile == "Custom" ? customLineScale : 1.0
+visualLabelPreference = visualProfile == "Subtle" ? "small" : visualProfile == "Custom" ? customLabelSize : "auto"
+
+applyVisualTransparency(baseColor) =>
+	color.new(baseColor, math.min(100, color.t(baseColor) + visualTransparencyBoost))
+
+getVisualLineWidth(baseWidth) =>
+	math.max(1, int(math.round(baseWidth * visualLineScale)))
+
+resolveLabelSize(defaultSize) =>
+	visualLabelPreference == "tiny" ? size.tiny : visualLabelPreference == "small" ? size.small : visualLabelPreference == "normal" ? size.normal : defaultSize
+
+primaryLineWidth = getVisualLineWidth(2)
+secondaryLineWidth = getVisualLineWidth(1)
+emphasisLineWidth = getVisualLineWidth(3)
+centerLabelSize = resolveLabelSize(size.normal)
+emphasisLabelSize = resolveLabelSize(size.large)
+
+boxColorRTH := applyVisualTransparency(boxColorRTH)
+boxColorNDOG := applyVisualTransparency(boxColorNDOG)
+prevDayCloseLineColor := applyVisualTransparency(prevDayCloseLineColor)
+prevDayCloseLabelBgColor := applyVisualTransparency(prevDayCloseLabelBgColor)
+gapMidlineColor := applyVisualTransparency(gapMidlineColor)
+gapPriceLabelBgColor := applyVisualTransparency(gapPriceLabelBgColor)
+gapExtLineColor := applyVisualTransparency(gapExtLineColor)
+nwogLabelBgColor := applyVisualTransparency(nwogLabelBgColor)
+asiaBoxColor := applyVisualTransparency(asiaBoxColor)
+asiaLineColor := applyVisualTransparency(asiaLineColor)
+asiaLabelBgColor := applyVisualTransparency(asiaLabelBgColor)
+vertLineColor := applyVisualTransparency(vertLineColor)
+startDayLineColor := applyVisualTransparency(startDayLineColor)
+sevenNineBoxColor := applyVisualTransparency(sevenNineBoxColor)
+sevenNineLineColor := applyVisualTransparency(sevenNineLineColor)
+sevenNineLabelBgColor := applyVisualTransparency(sevenNineLabelBgColor)
+bslColor := applyVisualTransparency(bslColor)
+sslColor := applyVisualTransparency(sslColor)
+asiaMidlineColor := applyVisualTransparency(asiaMidlineColor)
+sevenNineBslColor := applyVisualTransparency(sevenNineBslColor)
+sevenNineSslColor := applyVisualTransparency(sevenNineSslColor)
+sevenNineMidlineColor := applyVisualTransparency(sevenNineMidlineColor)
+prevDayHighColor := applyVisualTransparency(prevDayHighColor)
+prevDayLowColor := applyVisualTransparency(prevDayLowColor)
+pdhlLabelBgColor := applyVisualTransparency(pdhlLabelBgColor)
+adrTableBgColor := applyVisualTransparency(adrTableBgColor)
+adrTableBorderColor := applyVisualTransparency(adrTableBorderColor)
+adrLineColorUp := applyVisualTransparency(adrLineColorUp)
+adrLineColorDn := applyVisualTransparency(adrLineColorDn)
+adrCompletionHighColor := applyVisualTransparency(adrCompletionHighColor)
+adrCompletionMidColor := applyVisualTransparency(adrCompletionMidColor)
+adrCompletionLowColor := applyVisualTransparency(adrCompletionLowColor)
+
 
 // ======================================= Intraday Gap Settings
 groupETHGap  = "- - - - - - - - - - - - IntraDayGap Settings - - - - - - - - - - - - "
@@ -223,7 +284,7 @@ targetTime = getTargetTime()
 // ***MODIFIED***: Only show the previous close line for RTH gaps.
 if (time < targetTime) and not na(prevDayClose) and showETHGap and (gapTypeSelection == "RTH")
 	if na(prevDayLine)
-		prevDayLine := line.new(prevDayTime, prevDayClose, targetTime, prevDayClose, xloc=xloc.bar_time, color=prevDayCloseLineColor, width=2, style=line.style_solid)
+		prevDayLine := line.new(prevDayTime, prevDayClose, targetTime, prevDayClose, xloc=xloc.bar_time, color=prevDayCloseLineColor, width=primaryLineWidth, style=line.style_solid)
 		prevDayLabel := label.new(prevDayTime, prevDayClose, closeTimeDisplay + " Close: " + str.tostring(prevDayClose), xloc=xloc.bar_time, color=prevDayCloseLabelBgColor, textcolor=prevDayCloseLabelTextColor, style=label.style_label_center, size=size.small)
 	else
 		line.set_x2(prevDayLine, targetTime)
@@ -299,7 +360,7 @@ f_draw_eth_gap_zone(ethGapHigh, ethGapLow, ethGapStartIndex, ethGapEndIndex, box
 			foundNWOG := true
 
 		// Add midline inside the box
-		midLine = line.new(ethGapStartIndex, midpoint, ethGapEndIndex, midpoint, color=gapMidlineColor, width=1, style=line.style_dashed)
+		midLine = line.new(ethGapStartIndex, midpoint, ethGapEndIndex, midpoint, color=gapMidlineColor, width=secondaryLineWidth, style=line.style_dashed)
 		array.push(gapMidlines, midLine)
 
 		// Add price labels on the right of the box
@@ -314,22 +375,22 @@ f_draw_eth_gap_zone(ethGapHigh, ethGapLow, ethGapStartIndex, ethGapEndIndex, box
 		// Create extension lines if enabled
 		if extendETHGapLines
 			// High line
-			highLine = line.new(time, ethGapHigh, extensionTime, ethGapHigh, xloc=xloc.bar_time, color=gapExtLineColor, width=2, style=line.style_solid)
+			highLine = line.new(time, ethGapHigh, extensionTime, ethGapHigh, xloc=xloc.bar_time, color=gapExtLineColor, width=primaryLineWidth, style=line.style_solid)
 			array.push(gapExtLines, highLine)
 
 			// Low line
-			lowLine = line.new(time, ethGapLow, extensionTime, ethGapLow, xloc=xloc.bar_time, color=gapExtLineColor, width=2, style=line.style_solid)
+			lowLine = line.new(time, ethGapLow, extensionTime, ethGapLow, xloc=xloc.bar_time, color=gapExtLineColor, width=primaryLineWidth, style=line.style_solid)
 			array.push(gapExtLines, lowLine)
 
 			// Mid line
-			extMidLine = line.new(time, midpoint, extensionTime, midpoint, xloc=xloc.bar_time, color=gapExtLineColor, width=1, style=line.style_dashed)
+			extMidLine = line.new(time, midpoint, extensionTime, midpoint, xloc=xloc.bar_time, color=gapExtLineColor, width=secondaryLineWidth, style=line.style_dashed)
 			array.push(gapExtLines, extMidLine)
 
 			// Calculate label positions using time (xloc.bar_time) instead of bar_index to avoid the 500-bar limit error.
 			midPointTime = time + (extensionTime - time) / 2
 
 			// Box center label, placed at the midpoint in time of the extension.
-			boxLabel = label.new(midPointTime, midpoint, day_of_week_text() + " - " + finalLabelText, xloc=xloc.bar_time, color=gapPriceLabelBgColor, textcolor=gapPriceLabelTextColor, style=label.style_label_center, size=size.normal)
+			boxLabel = label.new(midPointTime, midpoint, day_of_week_text() + " - " + finalLabelText, xloc=xloc.bar_time, color=gapPriceLabelBgColor, textcolor=gapPriceLabelTextColor, style=label.style_label_center, size=centerLabelSize)
 			array.push(gapMainLabels, boxLabel)
 
 			// Add price labels at the end of the extended lines (at extensionTime)
@@ -345,7 +406,7 @@ f_draw_eth_gap_zone(ethGapHigh, ethGapLow, ethGapStartIndex, ethGapEndIndex, box
 			if isNWOG
 				// The midPointTime is already calculated above.
 				// Create label at the exact horizontal middle with time-based coordinates
-				extLabel = label.new(midPointTime, midpoint, "NWOG: " + str.tostring(ethGapHigh) + " - " + str.tostring(ethGapLow), xloc=xloc.bar_time, color=nwogLabelBgColor, textcolor=nwogLabelTextColor, style=label.style_label_center, size=size.normal)
+				extLabel = label.new(midPointTime, midpoint, "NWOG: " + str.tostring(ethGapHigh) + " - " + str.tostring(ethGapLow), xloc=xloc.bar_time, color=nwogLabelBgColor, textcolor=nwogLabelTextColor, style=label.style_label_center, size=centerLabelSize)
 				array.push(gapExtLabels, extLabel)
 
 	foundNWOG
@@ -581,7 +642,7 @@ if isAsiaEndReached and not na(asiaHigh) and not na(asiaLow) and showAsiaRange
 
 		// Add 50% midline if enabled
 		if showAsiaMidline
-			midLine = line.new(asiaStartTime, asiaMidPoint, asiaEndTime, asiaMidPoint, color=asiaMidlineColor, style=line.style_dashed, width=1)
+			midLine = line.new(asiaStartTime, asiaMidPoint, asiaEndTime, asiaMidPoint, color=asiaMidlineColor, style=line.style_dashed, width=secondaryLineWidth)
 			array.push(asiaMidLines, midLine)
 
 		// Calculate the extension target time for BSL/SSL lines - always to next available 3PM (startTimeHour)
@@ -608,12 +669,12 @@ if isAsiaEndReached and not na(asiaHigh) and not na(asiaLow) and showAsiaRange
 
 		if tf_in_minutes <= 60 // Only use timestamp approach for 1h and smaller timeframes
 			// Draw high and low lines directly to the timestamp using xloc.bar_time
-			asia_high_line := line.new(time, asiaHigh, extension_target_time, asiaHigh, xloc=xloc.bar_time, color=bslColor, width=2)
-			asia_low_line := line.new(time, asiaLow, extension_target_time, asiaLow, xloc=xloc.bar_time, color=sslColor, width=2)
+			asia_high_line := line.new(time, asiaHigh, extension_target_time, asiaHigh, xloc=xloc.bar_time, color=bslColor, width=primaryLineWidth)
+			asia_low_line := line.new(time, asiaLow, extension_target_time, asiaLow, xloc=xloc.bar_time, color=sslColor, width=primaryLineWidth)
 		else
 			// For larger timeframes, continue using the bar index method
-			asia_high_line := line.new(bar_index, asiaHigh, extensionEndBar, asiaHigh, color=bslColor, width=2)
-			asia_low_line := line.new(bar_index, asiaLow, extensionEndBar, asiaLow, color=sslColor, width=2)
+			asia_high_line := line.new(bar_index, asiaHigh, extensionEndBar, asiaHigh, color=bslColor, width=primaryLineWidth)
+			asia_low_line := line.new(bar_index, asiaLow, extensionEndBar, asiaLow, color=sslColor, width=primaryLineWidth)
 
 		array.push(asiaHighLines, asia_high_line)
 		array.push(asiaLowLines, asia_low_line)
@@ -638,16 +699,16 @@ if hour(time, timezone) == startTimeHour and minute(time, timezone) == 0 and asi
 	if not highSwept
 		// Highlight unswept high (BSL) with updated label - now stored in arrays
 		asiaHighStr = str.tostring(asiaHigh, syminfo.mintick < 0.01 ? "#.####" : syminfo.mintick < 0.1 ? "#.###" : syminfo.mintick < 1 ? "#.##" : "#.#")
-		unsweptHighLine = line.new(bar_index, asiaHigh, bar_index + 100, asiaHigh, color=color.new(bslColor, 0), width=3, style=line.style_solid)
-		unsweptHighLabel = label.new(bar_index, asiaHigh, "Unswept | AR BSL | " + asiaHighStr, style=label.style_label_right, color=color.new(bslColor, 90), textcolor=asiaUnsweptLabelTextColor, size=size.large)
+		unsweptHighLine = line.new(bar_index, asiaHigh, bar_index + 100, asiaHigh, color=color.new(bslColor, 0), width=emphasisLineWidth, style=line.style_solid)
+		unsweptHighLabel = label.new(bar_index, asiaHigh, "Unswept | AR BSL | " + asiaHighStr, style=label.style_label_right, color=color.new(bslColor, 90), textcolor=asiaUnsweptLabelTextColor, size=emphasisLabelSize)
 		array.push(unsweptHighLines, unsweptHighLine)
 		array.push(unsweptHighLabels, unsweptHighLabel)
 
 	if not lowSwept
 		// Highlight unswept low (SSL) with updated label - now stored in arrays
 		asiaLowStr = str.tostring(asiaLow, syminfo.mintick < 0.01 ? "#.####" : syminfo.mintick < 0.1 ? "#.###" : syminfo.mintick < 1 ? "#.##" : "#.#")
-		unsweptLowLine = line.new(bar_index, asiaLow, bar_index + 100, asiaLow, color=color.new(sslColor, 0), width=3, style=line.style_solid)
-		unsweptLowLabel = label.new(bar_index, asiaLow, "Unswept | AR SSL | " + asiaLowStr, style=label.style_label_right, color=color.new(sslColor, 90), textcolor=asiaUnsweptLabelTextColor, size=size.large)
+		unsweptLowLine = line.new(bar_index, asiaLow, bar_index + 100, asiaLow, color=color.new(sslColor, 0), width=emphasisLineWidth, style=line.style_solid)
+		unsweptLowLabel = label.new(bar_index, asiaLow, "Unswept | AR SSL | " + asiaLowStr, style=label.style_label_right, color=color.new(sslColor, 90), textcolor=asiaUnsweptLabelTextColor, size=emphasisLabelSize)
 		array.push(unsweptLowLines, unsweptLowLine)
 		array.push(unsweptLowLabels, unsweptLowLabel)
 
@@ -854,7 +915,7 @@ if isSevenNineEndReached and not na(sevenNineHigh) and not na(sevenNineLow) and 
 
 	// Add midline if enabled
 	if showSevenNineMidline
-		midLine = line.new(sevenNineStartTime, sevenNineMidPoint, sevenNineEndTime, sevenNineMidPoint, color=sevenNineMidlineColor, style=line.style_dashed, width=1)
+		midLine = line.new(sevenNineStartTime, sevenNineMidPoint, sevenNineEndTime, sevenNineMidPoint, color=sevenNineMidlineColor, style=line.style_dashed, width=secondaryLineWidth)
 		array.push(sevenNineMidLines, midLine)
 
 	// Draw BSL/SSL extension lines if enabled
@@ -870,8 +931,8 @@ if isSevenNineEndReached and not na(sevenNineHigh) and not na(sevenNineLow) and 
 
 		if tf_in_minutes <= 60
 			// Draw lines using timestamp coordinates
-			seven_nine_high_line := line.new(time, sevenNineHigh, extension_target_time, sevenNineHigh, xloc=xloc.bar_time, color=sevenNineBslColor, width=2)
-			seven_nine_low_line := line.new(time, sevenNineLow, extension_target_time, sevenNineLow, xloc=xloc.bar_time, color=sevenNineSslColor, width=2)
+			seven_nine_high_line := line.new(time, sevenNineHigh, extension_target_time, sevenNineHigh, xloc=xloc.bar_time, color=sevenNineBslColor, width=primaryLineWidth)
+			seven_nine_low_line := line.new(time, sevenNineLow, extension_target_time, sevenNineLow, xloc=xloc.bar_time, color=sevenNineSslColor, width=primaryLineWidth)
 		else
 			// For larger timeframes, use bar index method
 			timeDiff = extension_target_time - time
@@ -879,8 +940,8 @@ if isSevenNineEndReached and not na(sevenNineHigh) and not na(sevenNineLow) and 
 			maxBars = tf_in_minutes == 1 ? 1500 : tf_in_minutes <= 5 ? 1000 : tf_in_minutes <= 15 ? 500 : 300
 			extensionEndBar = bar_index + math.min(maxBars, math.max(20, barDiff))
 
-			seven_nine_high_line := line.new(bar_index, sevenNineHigh, extensionEndBar, sevenNineHigh, color=sevenNineBslColor, width=2)
-			seven_nine_low_line := line.new(bar_index, sevenNineLow, extensionEndBar, sevenNineLow, color=sevenNineSslColor, width=2)
+			seven_nine_high_line := line.new(bar_index, sevenNineHigh, extensionEndBar, sevenNineHigh, color=sevenNineBslColor, width=primaryLineWidth)
+			seven_nine_low_line := line.new(bar_index, sevenNineLow, extensionEndBar, sevenNineLow, color=sevenNineSslColor, width=primaryLineWidth)
 
 		array.push(sevenNineHighLines, seven_nine_high_line)
 		array.push(sevenNineLowLines, seven_nine_low_line)
@@ -918,16 +979,16 @@ if hour(time, timezone) == startTimeHour and minute(time, timezone) == 0 and sev
 	if not sevenNineHighSwept
 		// Highlight unswept high (BSL)
 		sevenNineHighStr = str.tostring(sevenNineHigh, syminfo.mintick < 0.01 ? "#.####" : syminfo.mintick < 0.1 ? "#.###" : syminfo.mintick < 1 ? "#.##" : "#.#")
-		unsweptHighLine = line.new(bar_index, sevenNineHigh, bar_index + 100, sevenNineHigh, color=color.new(sevenNineBslColor, 0), width=3, style=line.style_solid)
-		unsweptHighLabel = label.new(bar_index, sevenNineHigh, "Unswept | 7-9 BSL | " + sevenNineHighStr, style=label.style_label_right, color=color.new(sevenNineBslColor, 90), textcolor=sevenNineUnsweptLabelTextColor, size=size.large)
+		unsweptHighLine = line.new(bar_index, sevenNineHigh, bar_index + 100, sevenNineHigh, color=color.new(sevenNineBslColor, 0), width=emphasisLineWidth, style=line.style_solid)
+		unsweptHighLabel = label.new(bar_index, sevenNineHigh, "Unswept | 7-9 BSL | " + sevenNineHighStr, style=label.style_label_right, color=color.new(sevenNineBslColor, 90), textcolor=sevenNineUnsweptLabelTextColor, size=emphasisLabelSize)
 		array.push(unsweptSevenNineHighLines, unsweptHighLine)
 		array.push(unsweptSevenNineHighLabels, unsweptHighLabel)
 
 	if not sevenNineLowSwept
 		// Highlight unswept low (SSL)
 		sevenNineLowStr = str.tostring(sevenNineLow, syminfo.mintick < 0.01 ? "#.####" : syminfo.mintick < 0.1 ? "#.###" : syminfo.mintick < 1 ? "#.##" : "#.#")
-		unsweptLowLine = line.new(bar_index, sevenNineLow, bar_index + 100, sevenNineLow, color=color.new(sevenNineSslColor, 0), width=3, style=line.style_solid)
-		unsweptLowLabel = label.new(bar_index, sevenNineLow, "Unswept | 7-9 SSL | " + sevenNineLowStr, style=label.style_label_right, color=color.new(sevenNineSslColor, 90), textcolor=sevenNineUnsweptLabelTextColor, size=size.large)
+		unsweptLowLine = line.new(bar_index, sevenNineLow, bar_index + 100, sevenNineLow, color=color.new(sevenNineSslColor, 0), width=emphasisLineWidth, style=line.style_solid)
+		unsweptLowLabel = label.new(bar_index, sevenNineLow, "Unswept | 7-9 SSL | " + sevenNineLowStr, style=label.style_label_right, color=color.new(sevenNineSslColor, 90), textcolor=sevenNineUnsweptLabelTextColor, size=emphasisLabelSize)
 		array.push(unsweptSevenNineLowLines, unsweptLowLine)
 		array.push(unsweptSevenNineLowLabels, unsweptLowLabel)
 
@@ -1254,14 +1315,14 @@ if isNewDay() and showADR
 			dateText = getDayOfWeek(time[1]) + " " + formatDate(time[1])
 
 			if showBullishADR
-				bullishLine = line.new(x1=prevSessionStartBar, y1=bullishADRLevel, x2=prevSessionEndBar, y2=bullishADRLevel, color=adrLineColorUp, width=2)
+				bullishLine = line.new(x1=prevSessionStartBar, y1=bullishADRLevel, x2=prevSessionEndBar, y2=bullishADRLevel, color=adrLineColorUp, width=primaryLineWidth)
 				bullishADRPriceStr = str.tostring(bullishADRLevel, format.mintick)
 				bullishLabel = label.new(x=middleBar, y=bullishADRLevel, text="ADR | Bullish | " + bullishADRPriceStr + "\n(" + formatRangeValue(currentADR, sessionUnits) + " from Low)", style=label.style_label_center, color=adrLineColorUp, textcolor=adrLabelTextColor, size=size.small)
 				array.push(bullishADRLines, bullishLine)
 				array.push(bullishADRLabels, bullishLabel)
 
 			if showBearishADR
-				bearishLine = line.new(x1=prevSessionStartBar, y1=bearishADRLevel, x2=prevSessionEndBar, y2=bearishADRLevel, color=adrLineColorDn, width=2)
+				bearishLine = line.new(x1=prevSessionStartBar, y1=bearishADRLevel, x2=prevSessionEndBar, y2=bearishADRLevel, color=adrLineColorDn, width=primaryLineWidth)
 				bearishADRPriceStr = str.tostring(bearishADRLevel, format.mintick)
 				bearishLabel = label.new(x=middleBar, y=bearishADRLevel, text="ADR | Bearish | " + bearishADRPriceStr + "\n(" + formatRangeValue(currentADR, sessionUnits) + " from High)", style=label.style_label_center, color=adrLineColorDn, textcolor=adrLabelTextColor, size=size.small)
 				array.push(bearishADRLines, bearishLine)
@@ -1291,7 +1352,7 @@ if showADR and showCurrentADRLines and not na(currentADR) and not na(sessionHigh
 
 	if showBullishADR
 		if na(currentBullishLine)
-			currentBullishLine := line.new(x1=lineStartBar, y1=currentBullishLevel, x2=bar_index + 1, y2=currentBullishLevel, color=adrLineColorUp, width=1, style=line.style_solid, extend=extend.right)
+			currentBullishLine := line.new(x1=lineStartBar, y1=currentBullishLevel, x2=bar_index + 1, y2=currentBullishLevel, color=adrLineColorUp, width=secondaryLineWidth, style=line.style_solid, extend=extend.right)
 			currentBullishLabel := label.new(x=bar_index, y=currentBullishLevel, text="Live ADR | Bullish | " + str.tostring(currentBullishLevel, format.mintick), style=label.style_label_left, color=adrLineColorUp, textcolor=adrLabelTextColor, size=size.small)
 		else
 			line.set_xy1(currentBullishLine, lineStartBar, currentBullishLevel)
@@ -1301,7 +1362,7 @@ if showADR and showCurrentADRLines and not na(currentADR) and not na(sessionHigh
 	
 	if showBearishADR
 		if na(currentBearishLine)
-			currentBearishLine := line.new(x1=lineStartBar, y1=currentBearishLevel, x2=bar_index + 1, y2=currentBearishLevel, color=adrLineColorDn, width=1, style=line.style_solid, extend=extend.right)
+			currentBearishLine := line.new(x1=lineStartBar, y1=currentBearishLevel, x2=bar_index + 1, y2=currentBearishLevel, color=adrLineColorDn, width=secondaryLineWidth, style=line.style_solid, extend=extend.right)
 			currentBearishLabel := label.new(x=bar_index, y=currentBearishLevel, text="Live ADR | Bearish | " + str.tostring(currentBearishLevel, format.mintick), style=label.style_label_left, color=adrLineColorDn, textcolor=adrLabelTextColor, size=size.small)
 		else
 			line.set_xy1(currentBearishLine, lineStartBar, currentBearishLevel)
@@ -1353,7 +1414,7 @@ if showADR and (updateCounter % updateFreq == 0)
 	if showRangeCompletion
 		rowCount += 1
 	
-	adrTable := table.new(position=tablePos, columns=2, rows=rowCount, bgcolor=adrTableBgColor, border_width=1, border_color=adrTableBorderColor)
+	adrTable := table.new(position=tablePos, columns=2, rows=rowCount, bgcolor=adrTableBgColor, border_width=secondaryLineWidth, border_color=adrTableBorderColor)
 	
 	daysCount = array.size(dailyRanges)
 	daysText = daysCount == 0 ? "No Data" : str.tostring(daysCount) + (daysCount == 1 ? " Day" : " Days")
